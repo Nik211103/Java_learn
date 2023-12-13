@@ -11,7 +11,9 @@ public class Main {
         User user1 = new User();
         user1.registration();
         user1.showUserData();
+        user1.sendEmail();
     }
+
 
 }
 
@@ -22,42 +24,36 @@ class User{
     private  String email;
     private int age;
 
-    public void registration(){
+    public  void registration() {
         System.out.println("Здравствуйте, необходимо зарегистрироваться.");
-        System.out.print("Введите ваше имя: ");
-        name = scanner.nextLine();
-        System.out.print("Введите ваш email: ");
-        email = scanner.nextLine();
-        System.out.print("Введите ваш возраст: ");
-        age = scanner.nextInt();
 
-        System.out.println("Здравствуйте " +name);
-
-
+        System.out.println("Здравствуйте " + name);
     }
+        public void setAge ( int age){
+            System.out.print("Введите ваш возраст: ");
+            this.age = scanner.nextInt();
 
+        }
+        public int getAge () {
+            return age;
+        }
 
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
-    }
+        public void setEmail (String email){
+            System.out.print("Введите ваш email: ");
+            this.email = scanner.nextLine();
+        }
+        public String getEmail () {
+            return email;
+        }
 
+        public void setName (String name){
+            System.out.print("Введите ваше имя: ");
+            this.name = scanner.nextLine();
+        }
+        public String getName () {
+            return name;
+        }
 
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void sendEmail(){
         System.out.println("Напишите почту на которую хотите отправить письмо: ");
